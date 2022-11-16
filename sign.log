@@ -1,0 +1,5 @@
+time="2022-11-16T17:43:00.050" level=info msg="247 39.582995951417004 "
+time="2022-11-16T17:43:01.051" level=info msg="479 20.407098121085596 "
+time="2022-11-16T17:43:02.051" level=info msg="552 17.668478260869566 "
+time="2022-11-16T17:43:03.051" level=info msg="548 16.498175182481752 "
+time="2022-11-16T17:43:03.357" level=info msg="End Test, total query count is 2000 , average tps is 456.500000 , average latency is 20.867500ms"
