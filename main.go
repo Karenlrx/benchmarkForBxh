@@ -20,7 +20,7 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-func NewClient(pk crypto.PrivateKey, logger *logrus.Logger) (*rpcx.ChainClient, error) {
+func NewClient(pk crypto.PrivateKey, logger *logrus.Logger, poolSize int) (*rpcx.ChainClient, error) {
 	addrs := []string{
 		"172.16.13.130:60011",
 		"172.16.13.130:60012",
@@ -36,7 +36,7 @@ func NewClient(pk crypto.PrivateKey, logger *logrus.Logger) (*rpcx.ChainClient, 
 		rpcx.WithNodesInfo(nodesInfo...),
 		rpcx.WithLogger(logger),
 		rpcx.WithPrivateKey(pk),
-		rpcx.WithPoolSize(256),
+		rpcx.WithPoolSize(poolSize),
 	)
 	if err != nil {
 		return nil, err
@@ -87,7 +87,7 @@ func main() {
 		fmt.Println(err)
 		return
 	}
-	client, err := NewClient(pk, logger)
+	client, err := NewClient(pk, logger, poolSize)
 	if err != nil {
 		fmt.Println(err)
 		return
