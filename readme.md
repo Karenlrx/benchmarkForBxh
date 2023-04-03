@@ -10,10 +10,17 @@ test bitXHub get sign benchmark.
 git clone git@github.com:Karenlrx/benchmarkForBxh.git
 ```
 - modify config
-    you should ensure start bitxhub correctly, and ensure you have store som ibtp data in bitxhub. then modify ip and port, modify getSign interface input of id.
+    - you should ensure start bitxhub correctly,
+    - and ensure you have store some ibtp data in bitxhub,
+    ``` shell
+    vim main.go
+    # modify the interchain value which you store in bitxhub
+    var interchain = "1356:eth1:0x056401B3E8e357e7C4ABDC0569a04447a01e1402-1356:eth2:0xb7bCC3F7f995A17c8C07B01deb66b2dFa0CFFDf5-1"
+    ```
+    - then modify ip and port, modify getSign interface input of id.
 - compile project
 ``` shell
-cd benchmarkForBxh && go build -o getSign main.go 
+cd benchmarkForBxh && go build -o getSign *.go 
 ```
 
 - run test:
